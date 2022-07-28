@@ -41,8 +41,10 @@ launchApp <- function(GWSDAT_Options, session_file) {
   if (missing(GWSDAT_Options) && missing(session_file)) {
     
     .GlobalEnv$APP_RUN_MODE <- "MultiData"
+    .GlobalEnv$APP_LOGIN_MODE <- TRUE
     
-    shinyApp(ui = uiFull(), server = server)
+    opts <- list(port=8888, host='0.0.0.0')
+    shinyApp(ui = uiFull(), server = server, options = opts)
     
   } else {
     
@@ -57,7 +59,7 @@ launchApp <- function(GWSDAT_Options, session_file) {
     
     options(shiny.launch.browser = TRUE)
     
-    shinyApp(ui = uiSimple(), server = server)
+    shinyApp(ui = uiSimple(), server = server, port=8888)
   }
   
 }

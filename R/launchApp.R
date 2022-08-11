@@ -43,7 +43,7 @@ launchApp <- function(GWSDAT_Options, session_file) {
     .GlobalEnv$APP_RUN_MODE <- "MultiData"
     .GlobalEnv$APP_LOGIN_MODE <- TRUE
     
-    opts <- list(port=8888, host='0.0.0.0', shiny.fullstacktrace = TRUE) #, shiny.reactlog = TRUE , display.mode='showcase', shiny.error = browser)
+    opts <- list(port=80, host='0.0.0.0', shiny.fullstacktrace = TRUE) #, shiny.reactlog = TRUE , display.mode='showcase', shiny.error = browser)
     shinyApp(ui = uiFull(), server = server, options = opts)
     
   } else {

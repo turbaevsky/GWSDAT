@@ -1,1 +1,0 @@
-/home/tur/projects/wipro/Dockerfile
